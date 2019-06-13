@@ -54,9 +54,9 @@ const js = new Rollup(APP_ROOT, {
             {
               modules: false,
               targets: browserTargets
-            },
-          ],
-        ],
+            }
+          ]
+        ]
       })
     ]
   }
