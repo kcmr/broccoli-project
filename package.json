@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "lit-element": "^2.2.0"
+    "lit-element": "^2.2.0",
+    "wired-button": "^1.0.0"
   }
 }

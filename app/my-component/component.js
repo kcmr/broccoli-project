@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit-element';
+import { WiredButton } from 'wired-button';
 
 class Component extends LitElement {
   static get properties() {
@@ -27,15 +28,6 @@ class Component extends LitElement {
       p {
         margin-top: 0;
       }
-
-      button {
-        font: inherit;
-        background-color: #ED003C;
-        color: white;
-        border: 0;
-        height: 40px;
-        padding: 0 20px;
-      }
     `;
   }
 
@@ -43,7 +35,7 @@ class Component extends LitElement {
     return html`
       <p>${this.greeting}</p>
       <p>${this.timesClicked}</p>
-      <button @click="${this._onButtonClick}">Click me!</button>
+      <wired-button @click="${this._onButtonClick}">Click me!</wired-button>
     `;
   }
 
