@@ -20,8 +20,12 @@ const html = Funnel(APP_ROOT, {
   annotation: 'Index file'
 });
 
-const deps = Funnel('node_modules/systemjs', {
-  destDir: 'systemjs'
+const systemjs = Funnel('node_modules/systemjs', {
+  destDir: 'vendor/systemjs'
+});
+
+const babelTransform = Funnel('node_modules/systemjs-transform-babel', {
+  destDir: 'vendor/babel-transform'
 });
 
 const js = new Rollup(APP_ROOT, {
@@ -58,7 +62,7 @@ const js = new Rollup(APP_ROOT, {
   }
 });
 
-let tree = MergeTrees([html, js, deps], {
+let tree = MergeTrees([html, js, systemjs, babelTransform], {
   annotation: 'Final output'
 });
 

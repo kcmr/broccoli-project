@@ -8,6 +8,7 @@
 </head>
 <body>
   <p>hola mundo</p>
+
   <my-component></my-component>
 
   <script type="text/javascript">
@@ -16,8 +17,13 @@
     }
     </script>
   <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.2.10/webcomponents-bundle.js"></script>
-  <script src="systemjs/dist/system.js"></script>
-  <script src="systemjs/dist/extras/transform.js"></script>
+  <script src="vendor/systemjs/dist/system.js"></script>
+  <script src="vendor/systemjs/dist/extras/transform.js"></script>
+  <script>
+    if (typeof fetch === 'undefined') {
+      document.write('<script src="vendor/babel-transform/dist/babel-transform.js"><\/script>');
+    }
+  </script>
   <script>
     System.import('./assets/app.js');
   </script>
