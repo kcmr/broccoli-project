@@ -53,7 +53,7 @@ const js = new Rollup(APP_ROOT, {
   }
 });
 
-let tree = MergeTrees([html, js, systemjs, babelTransform], {
+let tree = MergeTrees([html, js], {
   annotation: 'Final output'
 });
 
