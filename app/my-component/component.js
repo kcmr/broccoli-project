@@ -1,5 +1,4 @@
 import { LitElement, html, css } from 'lit-element';
-// import styles from './component.css';
 
 class Component extends LitElement {
   static get properties() {
@@ -19,10 +18,10 @@ class Component extends LitElement {
   static get styles() {
     return css`
       :host {
-        font-family: sans-serif;
         display: block;
-        outline: 1px solid #ccc;
+        border: 1px solid #ccc;
         padding: 20px;
+        font-family: sans-serif;
       }
 
       p {
@@ -31,7 +30,7 @@ class Component extends LitElement {
 
       button {
         font: inherit;
-        background-color: orange;
+        background-color: #ED003C;
         color: white;
         border: 0;
         height: 40px;

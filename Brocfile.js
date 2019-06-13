@@ -7,7 +7,7 @@ const resolver = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
 const terser = require('rollup-plugin-terser').terser;
 const filesize = require('rollup-plugin-filesize');
-// const litcss = require('rollup-plugin-lit-css');
+const BrowserSync = require('broccoli-browser-sync');
 
 const APP_ROOT = 'app';
 const browserTargets = [
@@ -34,7 +34,6 @@ const js = new Rollup(APP_ROOT, {
       sourcemap: true
     },
     plugins: [
-      // litcss(),
       resolver(),
       commonjs({
         include: 'node_modules/**'
@@ -57,12 +56,10 @@ const js = new Rollup(APP_ROOT, {
   }
 });
 
-let tree = MergeTrees([html, js], {
-  annotation: 'Final output'
-});
+const server = new BrowserSync([html, js]);
 
-tree = new LiveReload(tree, {
-  target: 'index.html'
+const tree = MergeTrees([html, js, server], {
+  annotation: 'Final output'
 });
 
 module.exports = tree;
