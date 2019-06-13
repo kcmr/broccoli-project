@@ -6,6 +6,7 @@ const babel = require("rollup-plugin-babel");
 const resolver = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
 const terser = require('rollup-plugin-terser').terser;
+const filesize = require('rollup-plugin-filesize');
 // const litcss = require('rollup-plugin-lit-css');
 
 const APP_ROOT = 'app';
@@ -50,7 +51,8 @@ const js = new Rollup(APP_ROOT, {
           ]
         ]
       }),
-      terser()
+      terser(),
+      filesize()
     ]
   }
 });
