@@ -19,7 +19,6 @@
     "broccoli-browser-sync": "^1.0.2",
     "broccoli-cli": "^1.0.0",
     "broccoli-funnel": "^2.0.2",
-    "broccoli-livereload": "^1.4.0",
     "broccoli-merge-trees": "^3.0.2",
     "broccoli-rollup": "^4.1.1",
     "rollup": "^1.15.2",
