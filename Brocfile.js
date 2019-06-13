@@ -20,6 +20,10 @@ const html = Funnel(APP_ROOT, {
   annotation: 'Index file'
 });
 
+const deps = Funnel('node_modules/systemjs', {
+  destDir: 'systemjs'
+});
+
 const js = new Rollup(APP_ROOT, {
   inputFiles: ['**/*.js'],
   annotation: 'JS transformation',
@@ -54,7 +58,7 @@ const js = new Rollup(APP_ROOT, {
   }
 });
 
-let tree = MergeTrees([html, js], {
+let tree = MergeTrees([html, js, deps], {
   annotation: 'Final output'
 });
 
