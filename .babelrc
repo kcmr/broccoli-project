@@ -1,0 +1,14 @@
+{
+  "presets": [
+    ["@babel/env", {
+      "targets": {
+        "browsers": [
+		      "chrome >= 30",
+          "firefox >= 32",
+          "ios >= 9",
+          "last 1 edge versions"
+        ]
+      }
+    }]
+  ]
+}
