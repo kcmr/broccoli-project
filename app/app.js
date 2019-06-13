@@ -1,4 +1,4 @@
 import 'babel-polyfill';
-import './component';
+import './my-component/component';
 
 console.log('app loaded!');
