@@ -1,6 +1,5 @@
 const Funnel = require('broccoli-funnel');
 const MergeTrees = require('broccoli-merge-trees');
-const LiveReload = require('broccoli-livereload');
 const Rollup = require("broccoli-rollup");
 const babel = require("rollup-plugin-babel");
 const resolver = require('rollup-plugin-node-resolve');
@@ -14,8 +13,7 @@ const browserTargets = [
   'chrome >= 30',
   'firefox >= 32',
   'ios >= 9',
-  'last 1 edge versions',
-  // 'last 1 version'
+  'last 1 edge versions'
 ];
 
 const html = Funnel(APP_ROOT, {
