@@ -31,7 +31,7 @@ class Component extends LitElement {
 
       button {
         font: inherit;
-        background-color: green;
+        background-color: orange;
         color: white;
         border: 0;
         height: 40px;
