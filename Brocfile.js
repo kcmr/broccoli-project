@@ -21,14 +21,6 @@ const html = Funnel(APP_ROOT, {
   annotation: 'Index file'
 });
 
-const systemjs = Funnel('node_modules/systemjs', {
-  destDir: 'vendor/systemjs'
-});
-
-const babelTransform = Funnel('node_modules/systemjs-transform-babel', {
-  destDir: 'vendor/babel-transform'
-});
-
 const js = new Rollup(APP_ROOT, {
   inputFiles: ['**/*.js'],
   annotation: 'JS transformation',
@@ -36,7 +28,7 @@ const js = new Rollup(APP_ROOT, {
     input: 'app.js',
     output: {
       file: 'assets/app.js',
-      format: 'system',
+      format: 'iife', // "amd", "cjs", "system", "esm", "iife" or "umd"
       sourcemap: true
     },
     plugins: [
