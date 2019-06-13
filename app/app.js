@@ -1,4 +1,4 @@
 import 'babel-polyfill';
 import './component';
 
-console.log('patatas?');
+console.log('app loaded!');

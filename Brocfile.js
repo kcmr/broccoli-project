@@ -5,6 +5,7 @@ const Rollup = require("broccoli-rollup");
 const babel = require("rollup-plugin-babel");
 const resolver = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
+const litcss = require('rollup-plugin-lit-css');
 
 const APP_ROOT = 'app';
 const browserTargets = [
@@ -39,15 +40,13 @@ const js = new Rollup(APP_ROOT, {
       sourcemap: true
     },
     plugins: [
+      litcss(),
       resolver(),
       commonjs({
         include: 'node_modules/**'
       }),
       babel({
         babelrc: false,
-        plugins: [
-          '@babel/plugin-transform-regenerator'
-        ],
         presets: [
           [
             '@babel/env',

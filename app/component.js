@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit-element';
+import styles from './component.css';
 
 class Component extends LitElement {
   static get properties() {
@@ -8,35 +9,15 @@ class Component extends LitElement {
     };
   }
 
-  static get styles() {
-    return css`
-      :host {
-        font-family: sans-serif;
-        display: block;
-        outline: 1px solid #ccc;
-        padding: 20px;
-      }
-
-      p {
-        margin-top: 0;
-      }
-
-      button {
-        font: inherit;
-        background-color: #2187f3;
-        color: white;
-        border: 0;
-        height: 40px;
-        padding: 0 20px;
-      }
-    `;
-  }
-
   constructor() {
     super();
 
     this.greeting = 'hellowwworld';
     this.timesClicked = 0;
+  }
+
+  static get styles() {
+    return css`${styles}`;
   }
 
   render() {
