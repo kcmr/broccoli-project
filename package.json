@@ -6,7 +6,7 @@
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "broccoli build dist",
-    "preserve": "rm -rf serve",
+    "preserve": "rm -rf dist",
     "serve": "broccoli serve"
   },
   "keywords": [],
